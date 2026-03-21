@@ -1,0 +1,18 @@
+# venv
+.venv/
+venv/
+
+# IDE
+.idea/
+*.iml
+*.idea
+
+# Python cache
+__pycache__/
+*.pyc
+
+# данные/модели
+data/
+best_model.pth
+*.pth
+
