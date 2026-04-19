@@ -40,7 +40,7 @@ from defs.trainer import Trainer
 
 #Устанавливаем токен с HuggingFace для загрузки датасета
 from huggingface_hub import login
-login(token="hf_token")
+login(token="YOUR_HF_TOKEN")
 
 # ---------------------------------------------------------------------------
 # Воспроизводимость

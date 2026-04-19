@@ -75,8 +75,8 @@ class EnglishModelConfig:
     num_workers: int = 0
 
     # Оптимизация
-    lr: float = 2e-6
-    epochs: int = 3
+    lr: float = 2e-5
+    epochs: int = 4
 
     # Колонки датасета
     text_col: str = "OriginalTweet"
@@ -113,8 +113,8 @@ class RussianModelConfig:
     num_workers: int = 0
 
     # Оптимизация
-    lr: float = 2e-6
-    epochs: int = 3
+    lr: float = 2e-5
+    epochs: int = 4
 
     # Колонки датасета
     text_col: str = "text"
