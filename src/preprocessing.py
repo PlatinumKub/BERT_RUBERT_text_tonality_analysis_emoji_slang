@@ -115,10 +115,15 @@ class TextPreprocessor:
         emoji_dict: dict[str, str],
         slang_dict: dict[str, str],
         remove_social: bool = True,
+        use_emoji: bool = True,
+        use_slang: bool = True
+
     ):
         self.emoji_dict = emoji_dict
         self.slang_dict = slang_dict
         self.remove_social = remove_social
+        self.use_emoji = use_emoji
+        self.use_slang = use_slang
 
     def __call__(self, text: str) -> str:
         """Запускает полный пайплайн предобработки для одной строки"""
@@ -127,8 +132,10 @@ class TextPreprocessor:
             text = remove_urls(text)
             text = remove_hashtags(text)
             text = remove_mentions(text)
-        text = replace_emojis(text, self.emoji_dict)
-        text = expand_slang(text, self.slang_dict)
+        if self.use_emoji:
+            text = replace_emojis(text, self.emoji_dict)
+        if self.use_slang:
+            text = expand_slang(text, self.slang_dict)
         text = remove_punctuation(text)
         text = collapse_whitespace(text)
         return text
